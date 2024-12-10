@@ -1,0 +1,51 @@
+{
+  "name": "nest-client-js",
+  "version": "0.0.0-development",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "cloud server",
+    "nest server",
+    "cloud storage",
+    "nodejs",
+    "bunjs",
+    "cloud nest"
+  ],
+  "bugs": {
+    "url": "https://github.com/MyCloudNest/Nest-Client-JS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MyCloudNest/Nest-Client-JS"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "author": "Rio",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "axios": "^1.7.9",
+    "tsup": "^8.3.5"
+  }
+}

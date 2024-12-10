@@ -41,7 +41,7 @@ bun add nest-client-js
 ### 1. **Initialize the Client**
 
 ```typescript
-import NestClient from "Nest-Client-JS";
+import NestClient from "nest-client-js";
 
 const client = new NestClient("http://localhost:3000");
 ```

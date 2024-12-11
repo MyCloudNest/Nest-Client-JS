@@ -39,9 +39,6 @@ export default class NestClient {
     if (!file) {
       throw new Error("File is required");
     }
-    if (!fileName) {
-      throw new Error("File name is required");
-    }
   }
 
   private handleError(error: Error, operation: string): never {
@@ -68,7 +65,7 @@ export default class NestClient {
   async upload(
     file: File,
     fileName = "",
-    description = ""
+    description = "",
   ): Promise<FileResponse> {
     this.validateFileUpload(file, fileName);
 
@@ -80,7 +77,7 @@ export default class NestClient {
 
       const response: AxiosResponse<FileResponse> = await axios.post(
         `${this.baseUrl}${this.apiPath}`,
-        formData
+        formData,
       );
       return response.data;
     } catch (error) {
@@ -100,7 +97,7 @@ export default class NestClient {
 
     try {
       const response: AxiosResponse<FileResponse> = await axios.delete(
-        `${this.baseUrl}${this.apiPath}/${fileId}`
+        `${this.baseUrl}${this.apiPath}/${fileId}`,
       );
       return response.data;
     } catch (error) {
@@ -127,7 +124,7 @@ export default class NestClient {
         `${this.baseUrl}${this.apiPath}/${fileId}`,
         {
           params: { download },
-        }
+        },
       );
       return response.data;
     } catch (error) {
